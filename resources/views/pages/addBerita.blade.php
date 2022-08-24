@@ -7,8 +7,8 @@
     <div class="card-body">
         <div class="row">
             <div class="col">
-                <form>
-
+                <form action="/proses-tambah-berita" method="POST" enctype="multipart/form-data">
+                @csrf
                     <div class="mb-3">
                         <div class="mb-3 m-form__group">
                             <label class="form-label">Kategori ID</label>
@@ -37,18 +37,22 @@
                     <div class="mb-3">
                         <label class="form-label">Foto Konten</label>
 
-                        <input class="form-control" type="text" name="foto" aria-label="teaser">
+                        <input class="form-control" type="file" name="file" aria-label="teaser">
                     </div>
                     <div>
                         <label class="form-label">Isi Berita</label>
                         <textarea class="form-control" name="isi_berita" id="exampleFormControlTextarea4" rows="6"></textarea>
                     </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <button class="btn btn-light" type="submit">Cancel</button>
+                    </div>
+                </form>
+
             </div>
 
-            <div class="card-footer">
-                <button class="btn btn-primary m-r-15" type="submit">Submit</button>
-                <button class="btn btn-light" type="submit">Cancel</button>
-            </div>
+
 
             <br>
 
@@ -58,7 +62,6 @@
     </div>
 
 
-    </form>
 
 
 

@@ -7,15 +7,15 @@
     </div>
 @endif --}}
     <div class="card">
-    <div class="card-header pb-0">
-                                    <h5>@yield('title')</h5><span>{{$k->nama_kategori}}</span>
-                                </div>
-
+        <div class="card-header pb-0">
+            <h5>@yield('title')</h5><span>{{ $k->nama_kategori }}</span>
         </div>
-    <div class="card-body float-right">
+
+    </div>
+    {{-- <div class="card-body float-right">
         <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalfat"
             data-whatever="@mdo">Add Berita</button>
-    </div>
+    </div> --}}
 
     {{-- modal show --}}
     <div class="modal fade" id="exampleModalfat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -72,7 +72,7 @@
                         <td>
                             <a class="mr-4" href="/delete-kategori/{{ $i->id }}"><i data-feather="trash-2"></i></a>
                             <a href="#edit"><i data-feather="edit"></i></i></a>
-                            <a href="/detail-kategori/{{$i->id}}"><i data-feather="eye"></i></a>
+                            <a href="/detail/{{ $i->id }}"><i data-feather="eye"></i></a>
 
                         </td>
                     </tr>

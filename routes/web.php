@@ -23,6 +23,11 @@ Route::get('/home', function () {
     return view('master.layouts');
 });
 
+Route::get('/single', function () {
+    return view('pages.detailBerita');
+});
+
+
 // Route::get('/kategori-berita', function () {
 //     return view('pages.tabelKategori');
 // });
@@ -31,3 +36,5 @@ Route::get('/delete-kategori/{id}', [KategoriController::class, 'destroy']);
 Route::get('/detail-kategori/{id}', [KategoriController::class, 'show']);
 Route::post('/add-kategori', [KategoriController::class, 'store']);
 Route::get('/tambah-berita', [BeritaController::class, 'create']);
+Route::post('/proses-tambah-berita', [BeritaController::class, 'store']);
+Route::get('/detail/{id}', [BeritaController::class, 'show']);
