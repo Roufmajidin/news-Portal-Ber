@@ -56,6 +56,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Judul Berita</th>
                     <th scope="col">Isi Berita</th>
+                    <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -69,9 +70,18 @@
                         <td>{{ $i->judul_berita }}</td>
                         <td>{{ Str::limit($i->isi_berita, 50) }}</td>
                         {{-- <td>Kehidupan</td> --}}
+                        @if ($i->status == 0)
+                        <td>Draft</td>
+                        @elseif ($i->status == 1)
+                        <td>Publish</td>
+
+
+                        @endif
+
+
                         <td>
                             <a class="mr-4" href="/delete-kategori/{{ $i->id }}"><i data-feather="trash-2"></i></a>
-                            <a href="#edit"><i data-feather="edit"></i></i></a>
+                            <a href="/edit-berita/{{$i->id}}"><i data-feather="edit"></i></i></a>
                             <a href="/detail/{{ $i->id }}"><i data-feather="eye"></i></a>
 
                         </td>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Detail_kategori;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
-
+use Brian2694\Toastr\Facades\Toastr;
 class BeritaController extends Controller
 {
     /**
@@ -41,6 +41,7 @@ class BeritaController extends Controller
         $p->judul_berita = $request->judul_berita;
         $p->isi_berita = $request->isi_berita;
         $p->teaser = $request->teaser;
+        $p->status = $request->status;
         $p->foto = $image;
 
         $p->save();
@@ -73,6 +74,9 @@ class BeritaController extends Controller
     public function edit($id)
     {
         //
+        $k = Detail_kategori::find($id);
+        return view('pages.edit-berita', compact('k'));
+
     }
 
     /**
@@ -85,6 +89,28 @@ class BeritaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $file_nm = $request->file->getClientOriginalName();
+        $image = $request->file->storeAs('thumbnail', $file_nm);
+
+        $r = $request->kategori_id;
+
+        $d = Detail_kategori::where('id', $id)->first();
+        $d->judul_berita = $request->judul_berita;
+        $d->kategori_id = $request->kategori_id;
+        $d->status = $request->status;
+        $d->teaser = $request->teaser;
+        $d->isi_berita = $request->isi_berita;
+        $d->foto = $image;
+
+
+        $d->update();
+
+
+
+        // Toastr::success('Mengedit d ', 'sukses', ["positionClass" => "toast-top-right"]);
+
+        return redirect('/detail-kategori/'. $r);
+
     }
 
     /**

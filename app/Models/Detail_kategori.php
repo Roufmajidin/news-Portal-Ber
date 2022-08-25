@@ -15,6 +15,8 @@ class Detail_kategori extends Model
         'isi_berita',
         'foto',
         'teaser',
+        'status',
+        'slug',
     ];
 
         public function kategori()

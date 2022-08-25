@@ -38,3 +38,5 @@ Route::post('/add-kategori', [KategoriController::class, 'store']);
 Route::get('/tambah-berita', [BeritaController::class, 'create']);
 Route::post('/proses-tambah-berita', [BeritaController::class, 'store']);
 Route::get('/detail/{id}', [BeritaController::class, 'show']);
+Route::get('/edit-berita/{id}', [BeritaController::class, 'edit']);
+Route::patch('/proses-edit-berita/{id}', [BeritaController::class, 'update']);
