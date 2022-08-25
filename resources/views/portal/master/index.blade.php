@@ -33,7 +33,7 @@
         <![endif]-->
 
     <!-- header-start -->
-   @include('navbar')
+   @include('portal.master.navbar')
     <!--/ bradcam_area  -->
 
 
@@ -46,7 +46,7 @@
     <!--================Blog Area =================-->
 
     <!-- footer start -->
-  @include('footer')
+  @include('portal.master.footer')
     <!--/ footer end  -->
 
 

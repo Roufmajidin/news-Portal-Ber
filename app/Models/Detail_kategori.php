@@ -17,6 +17,7 @@ class Detail_kategori extends Model
         'teaser',
         'status',
         'slug',
+        'iklan',
     ];
 
         public function kategori()

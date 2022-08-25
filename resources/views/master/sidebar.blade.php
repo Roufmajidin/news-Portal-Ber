@@ -44,7 +44,7 @@
                                             data-feather="airplay"></i><span>Data</span></a>
                                     <ul class="nav-submenu menu-content">
                                         <li><a href="/kategori-berita">Kategori</a></li>
-                                        <li><a href="chart-widget.html">Berita</a></li>
+                                        <li><a href="/berita">Berita</a></li>
                                         <li><a href="/tambah-berita">Tambah Berita</a></li>
                                     </ul>
                                 </li>

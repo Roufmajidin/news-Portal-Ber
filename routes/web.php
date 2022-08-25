@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\MasterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,7 @@ Route::post('/proses-tambah-berita', [BeritaController::class, 'store']);
 Route::get('/detail/{id}', [BeritaController::class, 'show']);
 Route::get('/edit-berita/{id}', [BeritaController::class, 'edit']);
 Route::patch('/proses-edit-berita/{id}', [BeritaController::class, 'update']);
+
+// master portal
+
+Route::get('/berita', [MasterController::class, 'index']);
