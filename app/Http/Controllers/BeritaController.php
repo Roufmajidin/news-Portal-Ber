@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Detail_kategori;
 use App\Models\Kategori;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 class BeritaController extends Controller
@@ -110,6 +111,20 @@ class BeritaController extends Controller
         // Toastr::success('Mengedit d ', 'sukses', ["positionClass" => "toast-top-right"]);
 
         return redirect('/detail-kategori/'. $r);
+
+    }
+     public function Tag($id)
+    {
+        //
+        // $id =
+        // $i = Detail_kategori::where('slug', $slug)->find($id);
+        // $id = 7;
+
+
+        // $b = Detail_kategori::find($id);
+        $d = Tag::find($id);
+
+        dd($d);
 
     }
 

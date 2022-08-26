@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('stylePortal/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('stylePortal/css/slicknav.css') }}">
     <link rel="stylesheet" href="{{ asset('stylePortal/css/style.css') }}">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 </head>
 
 <body>
@@ -77,7 +77,7 @@
     <script src="{{ asset('stylePortal/js/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('stylePortal/js/mail-script.js') }}"></script>
 
-    <script src="js/main.js"></script>
+    <script src="{{ asset('stylePortal/js/main.js')}}"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',

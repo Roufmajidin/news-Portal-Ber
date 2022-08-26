@@ -5,6 +5,10 @@
     <div class="row">
         <div class="col-lg-8 mb-5 mb-lg-0">
             <div class="blog_left_sidebar">
+                @php
+                    $str = rand();
+                    $result = md5($str);
+                @endphp
 
                 @foreach ($d as $i)
                     <article class="blog_item">
@@ -17,7 +21,8 @@
                         </div>
 
                         <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
+
+                            <a class="d-inline-block" href="/{{ $i->slug }}/{{ $i->id }}">
                                 <h2>{{ $i->judul_berita }}</h2>
                             </a>
                             <p>{{ Str::limit($i->isi_berita, 200) }}</p>
@@ -58,7 +63,7 @@
                 {{-- iklan A --}}
                 <aside class="single_sidebar_widget search_widget">
 
-                      {{-- @foreach ($d as $i)
+                    {{-- @foreach ($d as $i)
                    {{$i->iklan}}
                         @endforeach --}}
                 </aside>
@@ -92,7 +97,7 @@
                 <aside class="single_sidebar_widget popular_post_widget">
                     <h3 class="widget_title">Recent Post</h3>
                     @foreach ($lp as $i)
-                    <div class="media post_item">
+                        <div class="media post_item">
 
                             <img width="50px" src="{{ asset('storage/' . $i->foto) }}" alt="post">
                             <div class="media-body">
@@ -102,8 +107,8 @@
                                 <p>{{ $i->updated_at }}</p>
                             </div>
 
-                    </div>
-                        @endforeach
+                        </div>
+                    @endforeach
 
                 </aside>
                 {{-- end --}}
@@ -113,30 +118,12 @@
                 <aside class="single_sidebar_widget tag_cloud_widget">
                     <h4 class="widget_title">Tag Clouds</h4>
                     <ul class="list">
-                        <li>
-                            <a href="#">project</a>
-                        </li>
-                        <li>
-                            <a href="#">love</a>
-                        </li>
-                        <li>
-                            <a href="#">technology</a>
-                        </li>
-                        <li>
-                            <a href="#">travel</a>
-                        </li>
-                        <li>
-                            <a href="#">restaurant</a>
-                        </li>
-                        <li>
-                            <a href="#">life style</a>
-                        </li>
-                        <li>
-                            <a href="#">design</a>
-                        </li>
-                        <li>
-                            <a href="#">illustration</a>
-                        </li>
+                        @foreach ($t as $i)
+                            <li>
+                                <a href="/lihat/{{$i->id}}">{{$i->nama_tag}}</a>
+                            </li>
+                        @endforeach
+
                     </ul>
                 </aside>
 
@@ -195,9 +182,8 @@
                 </aside>
                 {{-- end iklan --}}
             </div>
-        </div>
-    </div>
 
 
 
-@endsection
+
+        @endsection

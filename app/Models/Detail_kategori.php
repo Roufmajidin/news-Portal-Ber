@@ -24,5 +24,9 @@ class Detail_kategori extends Model
     {
         return $this->belongsTo(Kategori::class);
     }
+      public function Tag()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 
 }

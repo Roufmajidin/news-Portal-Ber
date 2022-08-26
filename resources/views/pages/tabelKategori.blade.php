@@ -68,9 +68,9 @@
                         <td>{{ $item->nama_kategori }}</td>
                         {{-- <td>Kehidupan</td> --}}
                         <td>
-                            <a class="mr-4" href="/delete-kategori/{{ $item->id }}"><i data-feather="trash-2"></i></a>
-                            <a href="#edit"><i data-feather="edit"></i></i></a>
-                            <a href="/detail-kategori/{{$item->id}}"><i data-feather="eye"></i></a>
+                            <a class="btn br-theme-fontawesome-stars" href="/delete-kategori/{{ $item->id }}"><i data-feather="trash-2"></i></a>
+                            <a class="btn br-theme-fontawesome-stars" href="#edit"><i data-feather="edit"></i></i></a>
+                            <a class="btn br-theme-fontawesome-stars" href="/detail-kategori/{{$item->id}}"><i data-feather="eye"></i></a>
 
                         </td>
                     </tr>

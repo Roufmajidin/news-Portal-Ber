@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Detail_kategori;
 use App\Models\Kategori;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -21,10 +22,11 @@ class MasterController extends Controller
         $d = Detail_kategori::all();
 
         $lp = Detail_kategori::latest()->take(2)->get();
+        $t = Tag::all();
         // take() method is equivalent to limit() method
 
 
-        return view('portal.page.single', compact('b', 'd', 'lp'));
+        return view('portal.page.single', compact('b', 'd', 'lp', 't'));
     }
 
     /**
@@ -54,10 +56,20 @@ class MasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug, $id)
     {
         //
+        // $id =
+        // $i = Detail_kategori::where('slug', $slug)->find($id);
+        // $id = 7;
+        $d = Detail_kategori::all();
+        $lp = Detail_kategori::latest()->take(2)->get();
+
+        $b = Detail_kategori::find($id);
+        // dd($b);
+        return view('portal.page.detail-page', compact('b', 'd', 'lp'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

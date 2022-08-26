@@ -56,6 +56,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Judul Berita</th>
                     <th scope="col">Isi Berita</th>
+                    <th scope="col">Slug</th>
                     <th scope="col">Status</th>
                 </tr>
             </thead>
@@ -69,7 +70,7 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $i->judul_berita }}</td>
                         <td>{{ Str::limit($i->isi_berita, 50) }}</td>
-                        {{-- <td>Kehidupan</td> --}}
+                        <td>{{$i->slug}}</td>
                         @if ($i->status == 0)
                         <td>Draft</td>
                         @elseif ($i->status == 1)

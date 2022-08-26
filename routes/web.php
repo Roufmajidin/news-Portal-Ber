@@ -45,3 +45,5 @@ Route::patch('/proses-edit-berita/{id}', [BeritaController::class, 'update']);
 // master portal
 
 Route::get('/berita', [MasterController::class, 'index']);
+Route::get('/{slug}/{id}', [MasterController::class, 'show']);
+Route::get('/lihat/{id}', [BeritaController::class, 'Tag']);
