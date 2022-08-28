@@ -43,6 +43,8 @@
     <link id="color" rel="stylesheet" href="{{ asset('master/css/color-1.css') }}" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('master/css/responsive.css') }}">
+
+
 </head>
 
 <body>
@@ -56,12 +58,12 @@
     <!-- page-wrapper Start-->
     <div class="page-wrapper" id="pageWrapper">
         <!-- Page Header Start-->
-    @include('master.header')
+        @include('master.header')
         <!-- Page Header Ends                              -->
         <!-- Page Body Start-->
         <div class="page-body-wrapper horizontal-menu">
             <!-- Page Sidebar Start-->
-        @include('master.sidebar')
+            @include('master.sidebar')
             <!-- Page Sidebar Ends-->
             <div class="page-body">
                 <div class="container-fluid">
@@ -112,7 +114,7 @@
                         <div class="col-sm-12">
                             <div class="card">
 
-                                    @yield('content')
+                                @yield('content')
 
                             </div>
                         </div>
@@ -143,6 +145,21 @@
     {{-- <script src="{{ asset('master/js/theme-customizer/customizer.js') }}"></script> --}}
     <!-- login js-->
     <!-- Plugin used-->
+
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script> --}}
+   <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+    </script>
+    <script>
+        CKEDITOR.replace('editor', options);
+    </script>
 </body>
 
 </html>

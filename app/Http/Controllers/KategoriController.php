@@ -47,7 +47,6 @@ class KategoriController extends Controller
         $k = Kategori::find($id);
         // dd($det);
         return view('pages.detailKategori', compact('det', 'k'));
-
     }
 
     /**
@@ -80,6 +79,13 @@ class KategoriController extends Controller
         $k = Kategori::where('id', $id);
         $k->delete();
         return redirect('/kategori-berita')->with('message', 'The success message!');
+    }
+    public function destroyd($id)
+    {
+        //
 
+        $k = Detail_kategori::where('id', $id);
+        $k->delete();
+        return redirect('/kategori-berita')->with('message', 'The success message!');
     }
 }

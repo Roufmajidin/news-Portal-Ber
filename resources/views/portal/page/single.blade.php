@@ -28,7 +28,7 @@
                             <p>{{ Str::limit($i->isi_berita, 200) }}</p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                <li><a href="#"><i class="fa fa-heart"></i> 03</a></li>
+                                <li><a href="#"><i class="fa fa-heart"></i> {{$i->lope  }}</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                             </ul>
                         </div>
@@ -101,7 +101,7 @@
 
                             <img width="50px" src="{{ asset('storage/' . $i->foto) }}" alt="post">
                             <div class="media-body">
-                                <a href="single-blog.html">
+                                <a href="{{$i->slug}}/{{$i->id}}">
                                     <h3>{{ $i->slug }}</h3>
                                 </a>
                                 <p>{{ $i->updated_at }}</p>
@@ -120,7 +120,7 @@
                     <ul class="list">
                         @foreach ($t as $i)
                             <li>
-                                <a href="/lihat/{{$i->id}}">{{$i->nama_tag}}</a>
+                                <a href="/lihat/{{$i->id}}/">{{$i->nama_tag}}</a>
                             </li>
                         @endforeach
 

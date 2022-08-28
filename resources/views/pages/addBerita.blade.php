@@ -57,7 +57,7 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label>Isi Berita</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="isi_berita"></textarea>
+                                    <textarea class="form-control" id="editor" rows="3" name="isi_berita"></textarea>
                                 </div>
                             </div>
                         </div>

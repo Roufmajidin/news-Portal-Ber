@@ -36,7 +36,7 @@
                     <div class="descript_wrap white-bg">
                         <div class="single_wrap">
                             <h4>{{ $b->judul_berita }}</h4>
-                            <p>{{ $b->isi_berita }}</p>
+                            <p>{!! $b->isi_berita !!}</p>
                         </div>
 
 

@@ -81,7 +81,7 @@
 
 
                         <td>
-                            <a class="mr-4" href="/delete-kategori/{{ $i->id }}"><i data-feather="trash-2"></i></a>
+                            <a class="mr-4" href="/delete-detail/{{ $i->id }}"><i data-feather="trash-2"></i></a>
                             <a href="/edit-berita/{{$i->id}}"><i data-feather="edit"></i></i></a>
                             <a href="/detail/{{ $i->id }}"><i data-feather="eye"></i></a>
 

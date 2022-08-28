@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 class BeritaController extends Controller
 {
+ public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -113,7 +117,7 @@ class BeritaController extends Controller
         return redirect('/detail-kategori/'. $r);
 
     }
-     public function Tag($id)
+     public function tag($id)
     {
         //
         // $id =
@@ -122,9 +126,9 @@ class BeritaController extends Controller
 
 
         // $b = Detail_kategori::find($id);
-        $d = Tag::find($id);
+        $d = Tag::with('detail_kategori')->where('tag_id', $id)->get();
 
-        dd($d);
+        // dd($d);
 
     }
 
